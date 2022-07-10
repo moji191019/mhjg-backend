@@ -1,4 +1,4 @@
-package com.mhjg_backend.yose;
+package com.mhjg.yose;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

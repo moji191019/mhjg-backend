@@ -12,9 +12,22 @@ import springfox.documentation.spring.web.plugins.Docket;
 
 @Configuration
 public class SwaggerConfig {
-
+	
+	/**
+	 * Swagger 설정의 핵심이 되는 Bean
+	 * 
+	 * @return
+	 */
     @Bean
-    public Docket api() {
+    public Docket api() {    	
+    	/* 
+    	 * Swagger UI : http://localhost:8081/swagger-ui/index.html
+    	 * 
+    	 * useDefaultResponseMessages : Swagger에서 제공하는 기본 응답 코드
+    	 * apis : API 스펙이 작성되어 있는 패키지
+    	 * paths: apis에 포함되어 있는 API 중 특정 path 선택
+    	 * apiInfo: Swagger UI로 노출할 정보
+    	 */
         return new Docket(DocumentationType.OAS_30)
                 .useDefaultResponseMessages(false)
                 .select()
