@@ -1,1 +1,1 @@
-# mhjg-backend
+# mhjg_backend
