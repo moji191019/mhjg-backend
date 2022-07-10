@@ -1,10 +1,10 @@
-package com.mhjg_backend.yose.comm.controller;
+package com.mhjg.yose.comm.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class testController {
+public class CommController {
 
 	@GetMapping("/test")
 	public String test() {

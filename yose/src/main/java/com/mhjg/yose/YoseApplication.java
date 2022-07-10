@@ -1,4 +1,4 @@
-package com.mhjg_backend.yose;
+package com.mhjg.yose;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
