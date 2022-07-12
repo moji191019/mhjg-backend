@@ -8,17 +8,19 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mhjg.yose.comm.service.CommService;
 
 @RestController
+@RequestMapping(value = "/comm")
 public class CommController {
 	
 	@Autowired
 	private CommService commService;
 	
-	@GetMapping(value = {"/test"}, consumes = {MediaType.APPLICATION_JSON_VALUE})
+	@GetMapping(value = "/test")
 	public Map<String, Object> test(HttpServletRequest request) throws Exception {
 		Map<String, Object> map = new HashMap<>();
 		map.put("remoteAddr", request.getRemoteAddr());
