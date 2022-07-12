@@ -4,9 +4,9 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
-import com.mhjg.yose.comm.DefaultDaoSupportor;
+import com.mhjg.yose.comm.CommonDefaultDaoSupportor;
 
-public class MariadbDaoSession extends DefaultDaoSupportor {
+public class MariadbDaoSession extends CommonDefaultDaoSupportor {
 
 	@Override
 	@Autowired

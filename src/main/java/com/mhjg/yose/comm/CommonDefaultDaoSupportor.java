@@ -7,7 +7,7 @@ import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
-public class DefaultDaoSupportor extends SqlSessionDaoSupport {
+public class CommonDefaultDaoSupportor extends SqlSessionDaoSupport {
 	
 	private SqlSessionFactory sqlSessionFactory;
 	

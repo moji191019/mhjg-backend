@@ -1,8 +1,8 @@
 package com.mhjg.yose.comm.vo;
 
-import com.mhjg.yose.comm.DefaultCommonVo;
+import com.mhjg.yose.comm.CommonDefaultVo;
 
-public class CommonVo extends DefaultCommonVo {
+public class CommonVo extends CommonDefaultVo {
 	
 	private String username;
 	

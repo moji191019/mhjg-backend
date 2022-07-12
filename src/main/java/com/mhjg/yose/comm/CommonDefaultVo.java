@@ -1,5 +1,5 @@
 package com.mhjg.yose.comm;
 
-public class DefaultCommonVo {
+public class CommonDefaultVo {
 	
 }

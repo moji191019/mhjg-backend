@@ -6,11 +6,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 import com.mhjg.yose.comm.CommonDefaultDaoSupportor;
 
-public class OracleDaoSession extends CommonDefaultDaoSupportor {
-
+public class MysqlDaoSession extends CommonDefaultDaoSupportor {
+	
 	@Override
 	@Autowired
-	@Qualifier("oracleSqlSessionFactory")
+	@Qualifier("mysqlSqlSessionFactory")
 	public void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory) {
 		super.setSqlSessionFactory(sqlSessionFactory);
 	}
