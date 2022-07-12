@@ -9,9 +9,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 public class DefaultDaoSupportor extends SqlSessionDaoSupport {
 	
+	private SqlSessionFactory sqlSessionFactory;
+	
 	@Override
 	public void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory) {
 		super.setSqlSessionFactory(sqlSessionFactory);
+		this.sqlSessionFactory = sqlSessionFactory;
 	}
 	
 	protected int insert(String statement) {

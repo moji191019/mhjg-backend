@@ -1,14 +1,16 @@
-package com.mhjg.yose.comm;
+package com.mhjg.yose.db.session;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
-public class MariadbDaoSession extends DefaultDaoSupportor {
+import com.mhjg.yose.comm.DefaultDaoSupportor;
+
+public class OracleDaoSession extends DefaultDaoSupportor {
 
 	@Override
 	@Autowired
-	@Qualifier("yoseSqlSessionFactory")
+	@Qualifier("oracleSqlSessionFactory")
 	public void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory) {
 		super.setSqlSessionFactory(sqlSessionFactory);
 	}

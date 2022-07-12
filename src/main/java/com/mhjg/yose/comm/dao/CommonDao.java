@@ -2,8 +2,8 @@ package com.mhjg.yose.comm.dao;
 
 import org.springframework.stereotype.Repository;
 
-import com.mhjg.yose.comm.MariadbDaoSession;
 import com.mhjg.yose.comm.vo.CommonVo;
+import com.mhjg.yose.db.session.MariadbDaoSession;
 
 @Repository
 public class CommonDao extends MariadbDaoSession {
