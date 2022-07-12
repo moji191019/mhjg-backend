@@ -42,8 +42,8 @@ public class MyBatisConfig {
 		
 		// typeAliasesPackage
 		List<String> aliasesPackages = new ArrayList();
-		// 모델 클래스 패키지가 추가될 때마다 등록
-		aliasesPackages.add("com.mhjg.yose.comm.model");
+		// 모델 클래스 패키지 추가될 때마다 등록
+		aliasesPackages.add("com.mhjg.yose.comm.vo");
 		sqlSessionFactory.setTypeAliasesPackage(StringUtils.join(aliasesPackages, ","));
 		
 		String mapperPath = "classpath:/mapper/**/*Mapper.xml";
@@ -57,7 +57,9 @@ public class MyBatisConfig {
 	
 	@Bean(name = "yoseSqlSessionTemplate")
 	@Primary
-	public SqlSessionTemplate yoseSqlSessionTemplate(@Qualifier("yoseSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
+	public SqlSessionTemplate yoseSqlSessionTemplate(
+			@Qualifier("yoseSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
+		
 		return new SqlSessionTemplate(sqlSessionFactory);
 	}
 	
