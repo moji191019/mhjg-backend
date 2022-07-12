@@ -20,6 +20,8 @@ import org.springframework.core.io.Resource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.mhjg.yose.db.interceptor.QueryInterceptor;
+
 @Configuration
 @EnableTransactionManagement
 public class MyBatisConfig {
@@ -38,18 +40,24 @@ public class MyBatisConfig {
 		
 		SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
 		
+		// dataSource
 		sqlSessionFactory.setDataSource(dataSource);
 		
+		// typeAliasesPackage
 		List<String> aliasesPackages = new ArrayList();
-		// 모델 클래스 패키지 추가될 때마다 등록
 		aliasesPackages.add("com.mhjg.yose.comm.vo");
 		sqlSessionFactory.setTypeAliasesPackage(StringUtils.join(aliasesPackages, ","));
 		
+		// mapperLocations
 		String mapperPath = "classpath:/mapper/**/*Mapper.xml";
 		sqlSessionFactory.setMapperLocations(context.getResources(mapperPath));
 		
+		// configLocation
 		String configPath = "classpath:/mybatis/mybatis-config.xml";
 		sqlSessionFactory.setConfigLocation(context.getResource(configPath));
+		
+		// plugins
+		sqlSessionFactory.setPlugins(new QueryInterceptor());
 		
 		return sqlSessionFactory;
 	}
