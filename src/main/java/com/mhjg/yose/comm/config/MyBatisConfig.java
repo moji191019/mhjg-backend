@@ -40,7 +40,6 @@ public class MyBatisConfig {
 		
 		sqlSessionFactory.setDataSource(dataSource);
 		
-		// typeAliasesPackage
 		List<String> aliasesPackages = new ArrayList();
 		// 모델 클래스 패키지 추가될 때마다 등록
 		aliasesPackages.add("com.mhjg.yose.comm.vo");
