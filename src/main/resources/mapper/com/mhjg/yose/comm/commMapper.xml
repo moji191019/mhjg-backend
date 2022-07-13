@@ -18,4 +18,13 @@
 		)
 	</insert>
 	
+	<select id="selectOneCommon" parameterType="commonVo" resultType="commonVo">
+		/* com.mhjg.yose.comm.selectOneCommon */
+		SELECT 
+			  USERNAME
+			, PASSWORD
+		FROM USERS
+		WHERE USERNAME = #{username}
+	</select>
+	
 </mapper>

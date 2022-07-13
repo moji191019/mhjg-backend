@@ -18,4 +18,9 @@ public class CommonServiceImpl implements CommonService {
 		return commonDao.insertCommon(commonVo);
 	}
 
+	@Override
+	public CommonVo selectOneCommon(CommonVo commonVo) throws Exception {
+		return commonDao.selectOneCommon(commonVo);
+	}
+
 }

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,6 +31,15 @@ public class CommonController {
 		map.put("remoteHost", request.getRemoteHost());
 		
 		return map;
+	}
+	
+	@GetMapping(value = "/user/{username}")
+	public CommonVo user(@PathVariable("username") String username) throws Exception {
+		CommonVo commonVo = new CommonVo();
+		commonVo.setUsername(username);
+		commonVo = commonService.selectOneCommon(commonVo);
+		
+		return commonVo;
 	}
 	
 	@GetMapping(value = "/users")

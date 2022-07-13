@@ -12,4 +12,8 @@ public class CommonDao extends MariadbDaoSession {
 		return insert("com.mhjg.yose.comm.insertCommon", commonVo);
 	}
 	
+	public CommonVo selectOneCommon(CommonVo commonVo)throws Exception {
+		return (CommonVo) selectOne("com.mhjg.yose.comm.selectOneCommon", commonVo);
+	}
+	
 }

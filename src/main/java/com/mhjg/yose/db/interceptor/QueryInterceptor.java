@@ -18,14 +18,19 @@ public class QueryInterceptor implements Interceptor {
 
 	@Override
 	public Object intercept(Invocation invocation) throws Throwable {
-		String statementId = ((MappedStatement) invocation.getArgs()[0]).getId();
+		String queryId = ((MappedStatement) invocation.getArgs()[0]).getId();
+		
+		Object param = invocation.getArgs()[1];
+		//Query String
+        String queryString = ((MappedStatement)invocation.getArgs()[0]).getBoundSql(param).getSql();
+		System.out.println("- Query String : \n" + queryString);
 		
 		long start = System.currentTimeMillis();
 		Object resultObj = invocation.proceed();
 		long stop = System.currentTimeMillis() - start;
 		
-		System.out.println("- statement id : " + statementId);
-		System.out.println("- execute time : " + stop);
+		System.out.println("- Query ID : " + queryId);
+		System.out.println("- Query Exec Time : " + stop);
 		
 		return resultObj;
 	}
