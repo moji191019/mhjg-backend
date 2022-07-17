@@ -13,8 +13,8 @@ public class JasyptPropertyEncryptor {
 	public static final String STRING_OUTPUT_TYPE = "BASE64";
 	
 	public static void main(String[] args) {
-		String username = "root";
-		String password = "mariadb";
+		String username = "kim";
+		String password = "lA3@KwQ4LF";
 		
 		StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor(); 
 		SimpleStringPBEConfig config = new SimpleStringPBEConfig(); 
