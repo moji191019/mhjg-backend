@@ -21,7 +21,7 @@ public class CommonContextInterceptor implements HandlerInterceptor {
 		CommonCoreData coreData = new CommonCoreData();
 		context.setCoreData(coreData);
 		
-		CommonControllerContextHolder.setStorage(context);
+		CommonControllerContextHolder.setHolder(context);
 		
 		return true;
 	}

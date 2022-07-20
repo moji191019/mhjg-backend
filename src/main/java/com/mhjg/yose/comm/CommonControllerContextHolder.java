@@ -2,23 +2,23 @@ package com.mhjg.yose.comm;
 
 public class CommonControllerContextHolder {
 	
-	private static ThreadLocal<CommonControllerContextHolder> storage = new ThreadLocal<>();
+	private static ThreadLocal<CommonControllerContextHolder> holder = new ThreadLocal<>();
 	
 	private CommonCoreData coreData;
 	
 	private CommonUserData userData;
 	
-	public static CommonControllerContextHolder getStorage() {
-		return storage.get();
+	public static CommonControllerContextHolder getHolder() {
+		return holder.get();
 	}
 	
-	public static void setStorage(CommonControllerContextHolder context) {
-		storage.set(context);
+	public static void setHolder(CommonControllerContextHolder context) {
+		holder.set(context);
 	}
 	
 	public static void clear() {
-		if(storage != null) {
-			storage.remove();
+		if(holder != null) {
+			holder.remove();
 		}
 	}
 	

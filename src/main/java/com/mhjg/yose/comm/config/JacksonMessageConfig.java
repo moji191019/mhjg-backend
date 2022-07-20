@@ -26,7 +26,7 @@ public class JacksonMessageConfig extends MappingJackson2HttpMessageConverter {
 		
 		Map<String, Object> outputMap = new HashMap<>();
 		
-		CommonCoreData coreData = CommonControllerContextHolder.getStorage().getCoreData();
+		CommonCoreData coreData = CommonControllerContextHolder.getHolder().getCoreData();
 		coreData.setResult("0");
 		
 		outputMap.put(CORE_DATA, coreData);
