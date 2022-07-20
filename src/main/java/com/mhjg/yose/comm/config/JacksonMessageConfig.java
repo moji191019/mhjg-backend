@@ -10,7 +10,7 @@ import org.springframework.http.HttpOutputMessage;
 import org.springframework.http.converter.HttpMessageNotWritableException;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 
-import com.mhjg.yose.comm.CommonControllerContext;
+import com.mhjg.yose.comm.CommonControllerContextHolder;
 import com.mhjg.yose.comm.CommonCoreData;
 
 @Configuration
@@ -26,7 +26,7 @@ public class JacksonMessageConfig extends MappingJackson2HttpMessageConverter {
 		
 		Map<String, Object> outputMap = new HashMap<>();
 		
-		CommonCoreData coreData = CommonControllerContext.getStorage().getCoreData();
+		CommonCoreData coreData = CommonControllerContextHolder.getStorage().getCoreData();
 		coreData.setResult("0");
 		
 		outputMap.put(CORE_DATA, coreData);

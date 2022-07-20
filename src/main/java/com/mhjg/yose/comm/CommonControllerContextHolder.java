@@ -1,18 +1,18 @@
 package com.mhjg.yose.comm;
 
-public class CommonControllerContext {
+public class CommonControllerContextHolder {
 	
-	private static ThreadLocal<CommonControllerContext> storage = new ThreadLocal<>();
+	private static ThreadLocal<CommonControllerContextHolder> storage = new ThreadLocal<>();
 	
 	private CommonCoreData coreData;
 	
 	private CommonUserData userData;
 	
-	public static CommonControllerContext getStorage() {
+	public static CommonControllerContextHolder getStorage() {
 		return storage.get();
 	}
 	
-	public static void setStorage(CommonControllerContext context) {
+	public static void setStorage(CommonControllerContextHolder context) {
 		storage.set(context);
 	}
 	

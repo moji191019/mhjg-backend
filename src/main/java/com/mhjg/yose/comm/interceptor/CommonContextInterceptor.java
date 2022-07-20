@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.mhjg.yose.comm.CommonControllerContext;
+import com.mhjg.yose.comm.CommonControllerContextHolder;
 import com.mhjg.yose.comm.CommonCoreData;
 
 public class CommonContextInterceptor implements HandlerInterceptor {
@@ -17,11 +17,11 @@ public class CommonContextInterceptor implements HandlerInterceptor {
 		
 		System.out.println("CommonContextInterceptor preHandle executed...");
 		
-		CommonControllerContext context = new CommonControllerContext();
+		CommonControllerContextHolder context = new CommonControllerContextHolder();
 		CommonCoreData coreData = new CommonCoreData();
 		context.setCoreData(coreData);
 		
-		CommonControllerContext.setStorage(context);
+		CommonControllerContextHolder.setStorage(context);
 		
 		return true;
 	}
